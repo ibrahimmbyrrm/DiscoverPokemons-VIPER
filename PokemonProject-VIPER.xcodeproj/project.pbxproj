@@ -34,6 +34,7 @@
 		80E6ABE52A40897000EC17D9 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6ABE42A40897000EC17D9 /* CacheManager.swift */; };
 		80E6ABE72A408C6300EC17D9 /* Array + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6ABE62A408C6300EC17D9 /* Array + Ext.swift */; };
 		80E6ABE92A408D4E00EC17D9 /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6ABE82A408D4E00EC17D9 /* UIViewController + Ext.swift */; };
+		80E6AC432A44795900EC17D9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 80E6AC422A44795900EC17D9 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E6AC432A44795900EC17D9 /* SnapKit in Frameworks */,
 				80E6ABC92A3C94F200EC17D9 /* SDWebImage in Frameworks */,
 				80E6ABBE2A3C89F900EC17D9 /* Alamofire in Frameworks */,
 			);
@@ -307,6 +309,7 @@
 			packageProductDependencies = (
 				80E6ABBD2A3C89F900EC17D9 /* Alamofire */,
 				80E6ABC82A3C94F200EC17D9 /* SDWebImage */,
+				80E6AC422A44795900EC17D9 /* SnapKit */,
 			);
 			productName = "PokemonProject-VIPER";
 			productReference = 80E6AB8B2A3C853800EC17D9 /* PokemonProject-VIPER.app */;
@@ -339,6 +342,7 @@
 			packageReferences = (
 				80E6ABBC2A3C89F900EC17D9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				80E6ABC72A3C94F200EC17D9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				80E6AC412A44795900EC17D9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 80E6AB8C2A3C853800EC17D9 /* Products */;
 			projectDirPath = "";
@@ -614,6 +618,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		80E6AC412A44795900EC17D9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -626,6 +638,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 80E6ABC72A3C94F200EC17D9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		80E6AC422A44795900EC17D9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80E6AC412A44795900EC17D9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

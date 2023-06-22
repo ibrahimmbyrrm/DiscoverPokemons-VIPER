@@ -6,6 +6,7 @@
 //
 import UIKit
 import Foundation
+import SnapKit
 
 class DetailView : UIViewController, DetailViewInterface {
     //MARK: - Programmatic UI Objects
@@ -49,23 +50,26 @@ class DetailView : UIViewController, DetailViewInterface {
     }
     //MARK: - UI Setup Functions
     private func setupContstraints() {
+        pokemonImageView.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
+            make.width.equalTo(200)
+            make.height.equalTo(200)
+        }
+        pokemonNameLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(pokemonImageView.snp.bottom).offset(16)
+            make.leading.equalTo(view.snp.leading).offset(16)
+            make.trailing.equalTo(view.snp.trailing).offset(-16)
+        }
+        
+        abilitiesTableView.snp.makeConstraints { make in
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+            make.bottom.equalTo(view.snp.bottom)
+            make.top.equalTo(pokemonNameLabel.snp.bottom).offset(16)
+        }
         view.backgroundColor = .white
-        NSLayoutConstraint.activate([
-            pokemonImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pokemonImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            pokemonImageView.widthAnchor.constraint(equalToConstant: 200),
-            pokemonImageView.heightAnchor.constraint(equalToConstant: 200),
-            
-            pokemonNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pokemonNameLabel.topAnchor.constraint(equalTo: pokemonImageView.bottomAnchor, constant: 16),
-            pokemonNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            pokemonNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            abilitiesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            abilitiesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            abilitiesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            abilitiesTableView.topAnchor.constraint(equalTo: pokemonNameLabel.bottomAnchor, constant: 16)
-        ])
     }
     
     private func addSubviews() {
